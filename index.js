@@ -42,6 +42,16 @@ app.post('/api/phonebill/total', (req, res) => {
   });
 });
 
+app.post('/api/phonebill/price', (req, res) => {
+  const usage = req.body.usage;
+  const cost = req.body.cost;
+
+  res.json({
+    status : 'success',
+    message : `The ${usage} was set to ${cost}`
+  })
+})
+
 app.get('/api/enough', (req, res) => {
   const usage = req.query.usage;
   const available = req.query.available;
