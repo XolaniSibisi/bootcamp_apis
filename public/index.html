@@ -66,9 +66,8 @@
             billStr:'',
             billMessage:'',
             phoneBill(){
-                axios
-                .get(`/api/phonebill/total?billStr=${this.billStr}`)
-                .then((result)=>{
+                axios.get(`/api/phonebill/prices?billStr=${this.billStr}`)
+                .then(result => {
                     this.billMessage=result.data.bill;
                     setTimeout(()=>{
                         this.billMessage='';
